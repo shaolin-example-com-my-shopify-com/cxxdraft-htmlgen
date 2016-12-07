@@ -8,7 +8,7 @@ module Document (
 	IndexEntry(..), IndexKind(..), Note(..), Example(..), TeXPara(..), Sentence(..),
 	texParaTex, texParaElems, XrefDelta, sectionByAbbr, isDefinitionSection, Abbreviation,
 	indexKeyContent, indexCatName, Sections(sections), SectionKind(..), mergeIndices, SourceLocation(..),
-	figures, tables, tableByAbbr, figureByAbbr, elemTex, footnotes, allElements,
+	figures, tables, tableByAbbr, figureByAbbr, elemTex, footnotes, allElements, allParagraphs,
 	LaTeX) where
 
 import LaTeXBase (LaTeXUnit(..), LaTeX, MathType(Dollar))

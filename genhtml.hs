@@ -8,6 +8,7 @@ import Prelude hiding ((++), (.), writeFile)
 import System.Directory (createDirectoryIfMissing, setCurrentDirectory, getCurrentDirectory, copyFile)
 import System.Environment (getArgs)
 import Control.Monad (forM_)
+import Npaperbot (writeNpaperbotFiles)
 import Util
 
 import Toc (writeTocFile)
@@ -43,6 +44,7 @@ main = do
 	forM_ ["expanded.css", "colored.css"] $
 		\f -> copyFile f (outputDir ++ "/" ++ f)
 	case sectionToWrite of
+		Just "npaperbot" -> writeNpaperbotFiles draft
 		Just abbr -> writeSingleSectionFile sectionFileStyle draft abbr
 		Nothing -> do
 			writeTocFile sectionFileStyle draft
